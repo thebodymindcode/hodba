@@ -41,19 +41,21 @@ body::before{content:'';position:fixed;inset:0;background:url("data:image/svg+xm
 .class-bar .open{color:var(--steel);font-weight:600}
 
 /* ── ШАПКА ───────────────────────────────────────── */
-.header{background:linear-gradient(180deg,#EAEFED,var(--page));padding:42px 44px 34px 52px;border-bottom:3px solid var(--ink);position:relative}
+.header{background:linear-gradient(180deg,#EAEFED,var(--page));padding:42px 36px 34px 44px;border-bottom:3px solid var(--ink);position:relative}
+.nb{white-space:nowrap}
 .header-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:28px;flex-wrap:wrap}
 .header-id{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
 .header-stamp{font-family:var(--f-mono);font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border:1.5px solid rgba(201,73,26,.3);padding:4px 14px}
 .masthead{text-align:center}
 .masthead-label{font-family:var(--f-mono);font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--steel);margin-bottom:22px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
 .masthead-label::before,.masthead-label::after{content:'';width:34px;height:1px;background:linear-gradient(90deg,transparent,var(--steel),transparent);opacity:.45}
-.masthead h1{font-family:var(--f-display);font-optical-sizing:auto;font-size:clamp(1.95rem,5.6vw,2.75rem);font-weight:600;line-height:1.06;letter-spacing:-.015em;text-transform:uppercase;color:var(--ink);margin-bottom:18px;text-wrap:balance}
+.masthead h1{font-family:var(--f-display);font-optical-sizing:auto;font-size:clamp(1.95rem,5.6vw,2.52rem);font-weight:600;line-height:1.08;letter-spacing:-.015em;text-transform:uppercase;color:var(--ink);margin-bottom:18px;text-wrap:balance}
 .masthead h1 em{font-style:italic;color:var(--accent)}
 .masthead-sub{font-family:var(--f-body);font-size:1.04rem;font-style:italic;color:var(--muted);max-width:560px;margin:0 auto;line-height:1.6}
 .masthead-line{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:26px}
 .masthead-line::before,.masthead-line::after{content:'';width:56px;height:1px;background:linear-gradient(90deg,transparent,var(--line))}
-.footprint{width:13px;height:19px;border-radius:50% 50% 44% 44%;background:rgba(201,73,26,.55);transform:rotate(-9deg)}
+.footprint{position:relative;width:13px;height:19px;border-radius:50% 50% 44% 44%;background:rgba(201,73,26,.55);transform:rotate(-9deg)}
+.footprint::after{content:"";position:absolute;top:-6px;left:1px;width:11px;height:6px;border-radius:50%;background:inherit}
 .footprint.b{transform:rotate(9deg) translateY(5px);background:rgba(52,80,92,.4)}
 
 /* ── ТЕКСТ ───────────────────────────────────────── */
@@ -114,6 +116,11 @@ em{font-style:italic}
 .curve .line{fill:none;stroke:#C9491A;stroke-width:3;stroke-linecap:round}
 .curve .lbl{font-family:'IBM Plex Mono',monospace;font-size:12px;fill:#6E7C82;letter-spacing:.03em}
 .curve .lbl-b{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;fill:#0F1518}
+@media(max-width:600px){
+ .curve .note{display:none}
+ .curve .lbl{font-size:22px}
+ .curve .lbl-b{font-size:24px}
+}
 .curve .dot{fill:#C9491A}
 .curve .dot-o{fill:#F8FAF9;stroke:#C9491A;stroke-width:2.5}
 
@@ -165,14 +172,14 @@ em{font-style:italic}
 .checklist{margin:38px 0;padding:30px 32px;background:var(--warm);border:1px solid var(--line)}
 .checklist-title{font-family:var(--f-mono);font-size:.8rem;text-transform:uppercase;letter-spacing:.16em;color:var(--accent);margin-bottom:8px;font-weight:600}
 .checklist-intro{font-size:1rem;color:var(--muted);margin-bottom:20px;font-style:italic}
-.checklist label{display:flex;align-items:flex-start;gap:14px;margin-bottom:15px;cursor:pointer;font-size:1.01rem;line-height:1.55}
-.checklist input[type="checkbox"]{margin-top:5px;accent-color:var(--accent);flex-shrink:0;width:22px;height:22px;cursor:pointer}
+.checklist label{display:flex;align-items:flex-start;gap:14px;margin-bottom:7px;padding:7px 0;min-height:44px;cursor:pointer;font-size:1.01rem;line-height:1.55}
+.checklist input[type="checkbox"]{margin-top:3px;accent-color:var(--accent);flex-shrink:0;width:22px;height:22px;cursor:pointer}
 .checklist-result{display:none;margin-top:14px;padding:20px 22px;background:#fff;border-left:3px solid var(--accent);font-size:1rem}
 .checklist-result.show{display:block}
 .checklist-result strong{color:var(--accent-d)}
 
 /* ── ПРОДУКТ И КНОПКА ────────────────────────────── */
-.product-block{margin:48px 0;background:linear-gradient(140deg,var(--graphite2),var(--graphite));color:#D5DEE0;padding:44px 38px;position:relative;overflow:hidden}
+.product-block{margin:48px 0;background:linear-gradient(140deg,var(--graphite2),var(--graphite));color:#D5DEE0;padding:44px 44px 44px 52px;position:relative;overflow:hidden}
 .product-block::before{content:'';position:absolute;inset:0;opacity:.06;background:repeating-linear-gradient(115deg,transparent 0,transparent 22px,rgba(255,106,43,.5) 22px,rgba(255,106,43,.5) 24px)}
 .product-eyebrow{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,106,43,.85);margin-bottom:14px;position:relative;z-index:1}
 .product-block h2{color:#fff;font-size:clamp(1.55rem,4.4vw,2.05rem);margin:0 0 8px;position:relative;z-index:1}
@@ -204,19 +211,20 @@ em{font-style:italic}
  .page{border:none;box-shadow:none}
  .page::before{width:4px}
  .class-bar{padding:10px 18px 10px 22px;font-size:.64rem;justify-content:center;text-align:center}
- .header{padding:30px 18px 26px 24px}
- .header-top{margin-bottom:22px}
+ .header{padding:30px 14px 26px 20px}
+ .header-top{margin-bottom:22px;justify-content:center;text-align:center}
  .header-id{font-size:.66rem}
  .header-stamp{font-size:.64rem;padding:3px 11px}
  .masthead-label{font-size:.68rem;letter-spacing:.15em;gap:10px}
  .masthead-label::before,.masthead-label::after{width:22px}
- .masthead h1{font-size:clamp(1.6rem,6.6vw,2.05rem)}
+ .masthead h1{font-size:clamp(1.62rem,6.6vw,2.1rem)}
  .masthead-sub{font-size:1rem}
  .content{padding:30px 18px 42px 24px}
  h2{font-size:clamp(1.28rem,5.2vw,1.6rem)}
  .lead-line{font-size:1.1rem}
  .photo-block{margin:28px 0}
- .photo-caption{padding:9px 13px;font-size:.63rem}
+ .photo-caption{padding:9px 13px;font-size:.63rem;row-gap:7px}
+ .photo-caption .tag{margin-left:auto}
  .photo-caption .tag{font-size:.56rem}
  .part-header{padding:13px 16px;font-size:.71rem;margin:42px 0 0}
  .part-title{margin:32px 0 18px}
@@ -225,7 +233,8 @@ em{font-style:italic}
  .stat-row{gap:16px;margin:36px 0;padding:26px 0}
  .stat{min-width:130px}
  .figure{padding:22px 18px 18px;margin:36px 0}
- .bar-name{font-size:.96rem}
+ .bar-name{font-size:.94rem}
+ .bar-val{font-size:.92rem}
  .versus{grid-template-columns:1fr;gap:12px;margin:36px 0}
  .vs-col{padding:22px 18px}
  .data-panel{padding:28px 20px;margin:36px 0}
@@ -235,7 +244,7 @@ em{font-style:italic}
  .info-grid{grid-template-columns:repeat(2,1fr);gap:10px;margin:32px 0}
  .info-cell{padding:18px 10px}
  .checklist{padding:24px 18px}
- .product-block{padding:32px 20px;margin:38px 0}
+ .product-block{padding:32px 18px 32px 24px;margin:38px 0}
  .product-block h2{font-size:clamp(1.6rem,7vw,2.05rem)}
  .cta-btn{padding:19px 28px;font-size:1.08rem;width:100%;max-width:380px}
  .cta-btn-large{padding:22px 28px;font-size:1.16rem}
@@ -244,17 +253,19 @@ em{font-style:italic}
  .site-foot{padding:24px 18px 26px 24px}
  .days-track{height:52px}
 }
-@media(max-width:390px){
- .class-bar{padding:9px 12px 9px 16px;font-size:.6rem}
- .header{padding:26px 14px 22px 18px}
- .content{padding:26px 14px 36px 18px}
- .masthead h1{font-size:1.48rem}
+@media(max-width:520px){
  .info-grid{grid-template-columns:1fr}
+}
+@media(max-width:390px){
+ .class-bar{padding:9px 12px 9px 16px;font-size:.64rem}
+ .header{padding:26px 12px 22px 16px}
+ .content{padding:26px 14px 36px 18px}
  .stat-row{flex-direction:column;gap:22px}
  .figure{padding:18px 14px 16px}
- .product-block{padding:28px 15px}
+ .product-block{padding:28px 14px 28px 18px}
  .cta-btn{padding:18px 16px;font-size:1.02rem;max-width:100%}
  h2{font-size:1.24rem}
+ .masthead h1{font-size:1.5rem}
  .pullquote{padding:20px 14px;font-size:1.08rem}
 }
 </style>
@@ -294,11 +305,11 @@ em{font-style:italic}
 
 <div class="content">
 
-<p class="lead-line">Аристотель учил своих учеников на ходу.</p>
+<p class="lead-line">Аристотель учил своих учеников на&nbsp;ходу.</p>
 
 <p class="dropcap">Его школу так и назвали: перипатетики, «прогуливающиеся». Ницше писал, что все истинно великие мысли приходят во время ходьбы. Дарвин каждый день ходил по одной и той же тропе, когда думал над теорией. Стив Джобс вёл важнейшие переговоры шагая, а не за столом. Кьеркегор признавался, что вышагал свои лучшие мысли.</p>
 
-<p>Столетиями лучшие умы уходили думать на своих двоих и возвращались с тем, что переворачивало науку, книги, целые компании. Слова «нейробиология» они не знали. Они просто чувствовали то, что теперь измеряют приборами: <span class="mark">стоит телу пойти, и внутри следом приходит в движение что-то ещё</span>.</p>
+<p>Столетиями лучшие умы уходили думать на своих двоих и возвращались с тем, что переворачивало науку, книги, целые компании. Слова «нейробиология» они не знали. Они просто чувствовали то, что теперь измеряют приборами: <span class="mark">стоит телу пойти, и внутри следом приходит в движение что-то&nbsp;ещё.</span></p>
 
 <div class="voice">
  <p>«Все истинно великие мысли приходят во время ходьбы».</p>
@@ -317,7 +328,7 @@ em{font-style:italic}
  </div>
 </div>
 
-<h2>Начнём с того, во что трудно поверить</h2>
+<h2>Начнём с того, во&nbsp;что трудно поверить</h2>
 
 <p>За последние пятнадцать лет ходьбу проверили на десятках тысяч людей, на снимках мозга и в цифрах, которые звучат почти невероятно. Вот только заработать на ней нельзя. Ходьбу не разлить по капсулам, не запатентовать и не продать в аптеке, поэтому о её настоящей силе говорят куда тише, чем она заслуживает.</p>
 
@@ -327,32 +338,32 @@ em{font-style:italic}
  <div class="info-cell">
   <svg viewBox="0 0 32 32"><path d="M16 27s-9-5.5-9-12a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.5-9 12-9 12z"/></svg>
   <div class="info-cell-label">Жизнь</div>
-  <div class="info-cell-val">риск умереть падает почти вдвое</div>
+  <div class="info-cell-val">риск умереть падает почти&nbsp;вдвое</div>
  </div>
  <div class="info-cell">
   <svg viewBox="0 0 32 32"><path d="M18 4 8 18h7l-1 10 10-14h-7z"/></svg>
   <div class="info-cell-label">Энергия</div>
-  <div class="info-cell-val">тело строит новые электростанции</div>
+  <div class="info-cell-val">тело строит новые&nbsp;электростанции</div>
  </div>
  <div class="info-cell">
   <svg viewBox="0 0 32 32"><path d="M13 6a4 4 0 0 0-4 4 3.6 3.6 0 0 0-2 6.4A4 4 0 0 0 10 24a3.6 3.6 0 0 0 6 1V7a3.6 3.6 0 0 0-3-1z"/><path d="M19 6a4 4 0 0 1 4 4 3.6 3.6 0 0 1 2 6.4A4 4 0 0 1 22 24a3.6 3.6 0 0 1-6 1"/></svg>
   <div class="info-cell-label">Мозг</div>
-  <div class="info-cell-val">центр памяти растёт в объёме</div>
+  <div class="info-cell-val">центр памяти растёт в&nbsp;объёме</div>
  </div>
  <div class="info-cell">
   <svg viewBox="0 0 32 32"><path d="M5 20c3-1 4-4 5-8s2-6 4-6 3 3 4 8 2 7 4 7 3-2 4-4"/></svg>
   <div class="info-cell-label">Покой</div>
-  <div class="info-cell-val">тревожная петля размыкается</div>
+  <div class="info-cell-val">тревожная петля&nbsp;размыкается</div>
  </div>
  <div class="info-cell">
   <svg viewBox="0 0 32 32"><circle cx="16" cy="13" r="7"/><path d="M13 26h6M14 29h4M16 6V3M25 13h3M4 13h3"/></svg>
   <div class="info-cell-label">Решения</div>
-  <div class="info-cell-val">поток идей плюс шестьдесят процентов</div>
+  <div class="info-cell-val">поток идей плюс шестьдесят&nbsp;процентов</div>
  </div>
  <div class="info-cell">
   <svg viewBox="0 0 32 32"><path d="M6 26l5-7 4 3 5-9 6 4"/><circle cx="26" cy="17" r="1.6"/></svg>
   <div class="info-cell-label">Масштаб</div>
-  <div class="info-cell-val">из расширения видно дальше</div>
+  <div class="info-cell-val">из расширения видно&nbsp;дальше</div>
  </div>
 </div>
 
@@ -364,7 +375,7 @@ em{font-style:italic}
 
 <!-- ═══ ЧАСТЬ I ═══ -->
 <div class="part-header"><span>Открытие первое</span><span class="num">I</span></div>
-<h2 class="part-title">Ни одно лекарство не работает <span class="hl">так широко</span></h2>
+<h2 class="part-title">Ни одно лекарство не&nbsp;работает <span class="hl">так широко</span></h2>
 
 <p>В июле 2025 года в The Lancet Public Health вышел крупнейший на сегодня анализ: 57 исследований, больше 160 000 человек. Учёные сравнили тех, кто проходит около <strong>7000 шагов в день</strong>, с теми, кто проходит около двух тысяч.</p>
 
@@ -421,7 +432,7 @@ em{font-style:italic}
   <span class="fig-tag">Фиг. 2</span>
  </div>
  <p class="fig-sub">Кривая круто идёт вверх до семи тысяч шагов, дальше выходит на плато.</p>
- <svg class="curve" viewBox="0 0 640 262" role="img" aria-label="Кривая пользы: крутой рост до семи тысяч шагов, дальше почти ровная линия">
+ <svg class="curve" viewBox="0 0 640 276" role="img" aria-label="Кривая пользы: крутой рост до семи тысяч шагов, дальше почти ровная линия">
   <line class="grid" x1="70" y1="60" x2="612" y2="60"/>
   <line class="grid" x1="70" y1="115" x2="612" y2="115"/>
   <line class="grid" x1="70" y1="170" x2="612" y2="170"/>
@@ -434,9 +445,9 @@ em{font-style:italic}
   <text class="lbl" x="100" y="232" text-anchor="middle">2000</text>
   <text class="lbl-b" x="270" y="232" text-anchor="middle">7000</text>
   <text class="lbl" x="530" y="232" text-anchor="middle">10 000</text>
-  <text class="lbl" x="341" y="256" text-anchor="middle">шагов в день</text>
-  <text class="lbl" x="288" y="99">основная выгода набрана</text>
-  <text class="lbl" x="486" y="34" text-anchor="middle">дальше кривая почти ровная</text>
+  <text class="lbl" x="341" y="258" text-anchor="middle">шагов в день</text>
+  <text class="lbl note" x="288" y="134">основная выгода набрана</text>
+  <text class="lbl note" x="486" y="34" text-anchor="middle">дальше кривая почти ровная</text>
   <text class="lbl" x="22" y="120" transform="rotate(-90 22 120)" text-anchor="middle">польза</text>
  </svg>
  <p class="fig-note">Форма кривой по данным Lancet Public Health, 2025. Цифра 10 000 пришла из рекламы японского шагомера 1965 года. Наука её не подтверждала.</p>
@@ -444,7 +455,7 @@ em{font-style:italic}
 
 <!-- ═══ ЧАСТЬ II ═══ -->
 <div class="part-header"><span>Открытие второе</span><span class="num">II</span></div>
-<h2 class="part-title">Каждый шаг строит внутри <span class="hl">новые электростанции</span></h2>
+<h2 class="part-title">Каждый шаг строит внутри <span class="hl">новые&nbsp;электростанции</span></h2>
 
 <p>Откуда берётся то, что мы называем «энергией жизни»? Из митохондрий, крошечных электростанций внутри каждой клетки, которые превращают еду и кислород в чистую силу. Чем их больше и чем они мощнее, тем крепче здоровье и тем больше у человека энергии на всё: на работу, на цели, на желания.</p>
 
@@ -505,7 +516,7 @@ em{font-style:italic}
  </div>
 </div>
 
-<p>И вот что показал Стэнфорд (Братман, PNAS, 2015). Одни девяносто минут шли по природе, другие вдоль шумной трассы. У первых руминация спала, а активность этой тревожной зоны снизилась. Сам шаг разжал то, что голова разжать не могла: <span class="mark">ноги сделали то, чего не смогли никакие уговоры изнутри</span>.</p>
+<p>И вот что показал Стэнфорд (Братман, PNAS, 2015). Одни девяносто минут шли по природе, другие вдоль шумной трассы. У первых руминация спала, а активность этой тревожной зоны снизилась. Сам шаг разжал то, что голова разжать не могла: <span class="mark">ноги сделали то, чего не смогли никакие уговоры&nbsp;изнутри.</span></p>
 
 <p>Тревога держит человека маленьким. Пока она гудит фоном, он не рискнёт, не назовёт свою цену, не потянется за большим. Шаг снимает её у корня, и место страха освобождается для движения.</p>
 
@@ -546,21 +557,21 @@ em{font-style:italic}
  <div class="vs-col vs-before">
   <div class="vs-tag">Сжатие</div>
   <ul>
-   <li>плечи вверх, дыхание в грудь</li>
-   <li>поле зрения сужается до щели</li>
-   <li>цена называется поменьше</li>
-   <li>большое дело откладывается</li>
-   <li>возможность рядом и не видна</li>
+   <li>плечи вверх, дыхание в&nbsp;грудь</li>
+   <li>поле зрения сужается до&nbsp;щели</li>
+   <li>цена называется&nbsp;поменьше</li>
+   <li>большое дело&nbsp;откладывается</li>
+   <li>возможность рядом и не&nbsp;видна</li>
   </ul>
  </div>
  <div class="vs-col vs-after">
   <div class="vs-tag">Расширение</div>
   <ul>
-   <li>кортизол отпускает, тело раскрывается</li>
-   <li>вариантов видно больше</li>
-   <li>своя цена звучит спокойно</li>
-   <li>после неё держится тишина</li>
-   <li>шаг делается сегодня, а не потом</li>
+   <li>кортизол отпускает, тело&nbsp;раскрывается</li>
+   <li>вариантов видно&nbsp;больше</li>
+   <li>своя цена звучит&nbsp;спокойно</li>
+   <li>после неё держится&nbsp;тишина</li>
+   <li>шаг делается сегодня, а&nbsp;не&nbsp;потом</li>
   </ul>
  </div>
 </div>
@@ -607,10 +618,10 @@ em{font-style:italic}
 <div class="checklist" id="selfCheck">
  <div class="checklist-title">&#9608; Две минуты, честно</div>
  <p class="checklist-intro">Отметьте то, что действительно почувствовали, а не то, что должно быть по правилам.</p>
- <label><input type="checkbox" onchange="updateCheck()"> <span>Представил сумму или цель, которую по-настоящему хочу, так, будто это уже случилось. Побыл там пару секунд и следил за телом.</span></label>
- <label><input type="checkbox" onchange="updateCheck()"> <span>Представил, что завтра просыпаюсь с лёгкостью, полным сил, и тело за целый день ни разу не подводит.</span></label>
- <label><input type="checkbox" onchange="updateCheck()"> <span>Плечи подались вперёд, дыхание стало мельче, внутри что-то сжалось.</span></label>
- <label><input type="checkbox" onchange="updateCheck()"> <span>Поднялось ощущение сомнения или тихой невозможности, будто это не получится или будет когда-нибудь потом.</span></label>
+ <label><input type="checkbox" onchange="updateCheck()"> <span>Представил сумму или цель, которую <span class="nb">по-настоящему</span> хочу, так, будто это уже случилось. Побыл там пару секунд и следил за&nbsp;телом.</span></label>
+ <label><input type="checkbox" onchange="updateCheck()"> <span>Представил, что завтра просыпаюсь с лёгкостью, полным сил, и тело за целый день ни разу не&nbsp;подводит.</span></label>
+ <label><input type="checkbox" onchange="updateCheck()"> <span>Плечи подались вперёд, дыхание стало мельче, внутри <span class="nb">что-то</span>&nbsp;сжалось.</span></label>
+ <label><input type="checkbox" onchange="updateCheck()"> <span>Поднялось ощущение сомнения или тихой невозможности, будто это не получится или будет <span class="nb">когда-нибудь</span>&nbsp;потом.</span></label>
  <div class="checklist-result" id="res2"><p><strong>Это и есть ваша граница.</strong> Проходит она по телу и срабатывает раньше, чем включается мысль.</p></div>
  <div class="checklist-result" id="res4"><p><strong>Она же держит всё сразу:</strong> не даёт назвать цену, откладывает большое дело, отговаривает заняться собой, гасит смелость замахнуться. Один рефлекс сжатия, а от него зависят и деньги, и цели, и здоровье, и энергия.</p></div>
 </div>
@@ -651,11 +662,11 @@ em{font-style:italic}
  <p><strong>Точная последовательность, где каждый день встраивает одно звено новой нормы.</strong> Той, что потом не откатывается.</p>
 
  <ul class="product-list">
-  <li>у каждой сессии прописаны темп, дыхание, взгляд, среда и голос</li>
-  <li>тест первого дня определяет ваш вход, дальше настройки меняются</li>
-  <li>сессия заканчивается действием в реальную жизнь, пока держится эффект</li>
-  <li>27 часов движения и замеры до и после: пульс, сон, талия, сахар</li>
-  <li>план на плохую погоду и на неделю, которая рушится</li>
+  <li>у каждой сессии прописаны темп, дыхание, взгляд, среда и&nbsp;голос</li>
+  <li>тест первого дня определяет ваш вход, дальше настройки&nbsp;меняются</li>
+  <li>сессия заканчивается действием в реальную жизнь, пока держится&nbsp;эффект</li>
+  <li>27 часов движения и замеры до и после: пульс, сон, талия,&nbsp;сахар</li>
+  <li>план на плохую погоду и на неделю, которая&nbsp;рушится</li>
  </ul>
 
  <p class="product-note">Почему 21 день и почему вместе. Новому состоянию нужно время, чтобы стать прочнее старого, а старое цепко тянет назад в первые же дни. Поток идёт рядом ровно столько, сколько нужно, чтобы новая норма стала своей.</p>
@@ -682,7 +693,7 @@ em{font-style:italic}
 </div><!-- .content -->
 
 <div class="footer">
- <p>Архитектура сознания &#183; @thebodymindcode &#183; Дарья Ростовцева</p>
+ <p>Архитектура сознания &#183; @thebodymindcode &#183; Дарья&nbsp;Ростовцева</p>
 </div>
 
 <footer class="site-foot">
@@ -692,15 +703,15 @@ em{font-style:italic}
    <div style="font-family:var(--f-mono);font-size:.72rem;color:var(--muted);margin-top:5px;letter-spacing:.06em;text-transform:uppercase">Мозг &#183; тело &#183; состояние</div>
   </div>
   <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-   <a href="https://t.me/+oSuGhJQlsr4zYmQy" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;text-decoration:none;padding:10px 17px;border-radius:10px;font-weight:700;font-size:.8rem;font-family:-apple-system,sans-serif"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M21.3 4.3 2.9 11.4c-1 .38-.98 1.78.03 2.13l4.55 1.56 1.76 5.4c.28.85 1.37 1.03 1.9.28l2.5-3.55 4.55 3.36c.7.52 1.7.13 1.87-.72L22.9 5.7c.2-1-.68-1.82-1.6-1.4Z"/></svg> Телеграм</a>
-   <a href="https://instagram.com/thebodymindcode" target="_blank" rel="noopener" aria-label="Instagram" style="width:40px;height:40px;border-radius:11px;background:rgba(15,21,24,.05);display:inline-flex;align-items:center;justify-content:center;color:var(--body)"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5.4" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.7"/><circle cx="17.4" cy="6.6" r="1.25" fill="currentColor"/></svg></a>
-   <a href="https://www.youtube.com/@thebodymindcode" target="_blank" rel="noopener" aria-label="YouTube" style="width:40px;height:40px;border-radius:11px;background:rgba(15,21,24,.05);display:inline-flex;align-items:center;justify-content:center;color:var(--body)"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><rect x="2.4" y="5.6" width="19.2" height="12.8" rx="4.2" stroke="currentColor" stroke-width="1.7"/><path d="M10.4 9.3 15.2 12l-4.8 2.7V9.3Z" fill="currentColor"/></svg></a>
-   <a href="https://www.tiktok.com/@thebodymindcode" target="_blank" rel="noopener" aria-label="TikTok" style="width:40px;height:40px;border-radius:11px;background:rgba(15,21,24,.05);display:inline-flex;align-items:center;justify-content:center;color:var(--body)"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M13.7 3.2v9.9a3.6 3.6 0 1 1-3.05-3.56" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.7 5.6c.85 1.9 2.55 3.15 4.75 3.35" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+   <a href="https://t.me/+oSuGhJQlsr4zYmQy" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;text-decoration:none;padding:12px 17px;border-radius:10px;font-weight:700;font-size:.8rem;font-family:-apple-system,sans-serif"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M21.3 4.3 2.9 11.4c-1 .38-.98 1.78.03 2.13l4.55 1.56 1.76 5.4c.28.85 1.37 1.03 1.9.28l2.5-3.55 4.55 3.36c.7.52 1.7.13 1.87-.72L22.9 5.7c.2-1-.68-1.82-1.6-1.4Z"/></svg> Телеграм</a>
+   <a href="https://instagram.com/thebodymindcode" target="_blank" rel="noopener" aria-label="Instagram" style="width:44px;height:44px;border-radius:12px;background:rgba(15,21,24,.05);display:inline-flex;align-items:center;justify-content:center;color:var(--body)"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5.4" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.7"/><circle cx="17.4" cy="6.6" r="1.25" fill="currentColor"/></svg></a>
+   <a href="https://www.youtube.com/@thebodymindcode" target="_blank" rel="noopener" aria-label="YouTube" style="width:44px;height:44px;border-radius:12px;background:rgba(15,21,24,.05);display:inline-flex;align-items:center;justify-content:center;color:var(--body)"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><rect x="2.4" y="5.6" width="19.2" height="12.8" rx="4.2" stroke="currentColor" stroke-width="1.7"/><path d="M10.4 9.3 15.2 12l-4.8 2.7V9.3Z" fill="currentColor"/></svg></a>
+   <a href="https://www.tiktok.com/@thebodymindcode" target="_blank" rel="noopener" aria-label="TikTok" style="width:44px;height:44px;border-radius:12px;background:rgba(15,21,24,.05);display:inline-flex;align-items:center;justify-content:center;color:var(--body)"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M13.7 3.2v9.9a3.6 3.6 0 1 1-3.05-3.56" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.7 5.6c.85 1.9 2.55 3.15 4.75 3.35" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
  </div>
- <div style="margin-top:18px;font-family:-apple-system,sans-serif;font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px">
-  <span>&copy; 2026. Все права защищены. ИП Ростовцева Дарья Валерьевна &#183; ИНН 241103415641</span>
-  <a href="https://t.me/TheBodyMindCode_support" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:none">Поддержка &#183; @TheBodyMindCode_support</a>
+ <div style="margin-top:8px;font-family:-apple-system,sans-serif;font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2px 18px">
+  <span style="padding:12px 0">&copy; 2026. Все права защищены. ИП Ростовцева Дарья Валерьевна &#183; ИНН&nbsp;241103415641</span>
+  <a href="https://t.me/TheBodyMindCode_support" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:none;display:inline-block;padding:12px 0">Поддержка &#183; @TheBodyMindCode_support</a>
  </div>
 </footer>
 
